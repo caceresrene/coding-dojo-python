@@ -11,7 +11,7 @@ class CuentaBancaria:
         return self
 
     def retiro(self, amount):
-        if (self.balance > amount):
+        if (self.balance >= amount):
             self.balance -= amount
         else:
             print(
@@ -39,20 +39,21 @@ class Usuario:
         self.cuenta = CuentaBancaria(tasaDeInteres)
 
     def hacer_deposito(self, amount):
-      self.cuenta.deposito(amount)
-      return self
+        self.cuenta.deposito(amount)
+        return self
 
     def hacer_retiro(self, amount):
-        self.cuenta.deposito(amount)
+        self.cuenta.retiro(amount)
         return self
 
     def mostrar_balance_usuario(self):
         print(f'User: {self.name}, Balance: {self.cuenta.balance}')
         return self
 
-    def transfer_dinero(self, other_user, amount):
+    # Bonus Ninja
+    def transfer_dinero(self, other_bank_account, amount):
         self.hacer_retiro(amount)
-        other_user.deposito(amount)
+        other_bank_account.deposito(amount)
         return self
 
 
@@ -62,3 +63,8 @@ johnOtherBank = CuentaBancaria(0.33)
 
 john.hacer_deposito(50)
 john.mostrar_balance_usuario()
+
+# Bonus ninja
+john.transfer_dinero(johnOtherBank, 50)
+john.mostrar_balance_usuario()
+johnOtherBank.mostrar_info_cuenta()
