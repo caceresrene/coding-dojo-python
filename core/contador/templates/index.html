@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contador Core</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="max-w-xl mx-auto">
+		<h1 class="font-bold text-center text-2xl">Contador</h1>
+		<div class="my-2 flex items-center gap-1 justify-center">
+			<button href="/" class="text-white rounded p-1 bg-green-500">
+				<a href="/">+1 visita</a>
+			</button>
+			<p><span class="text-2xl font-bold">{{ contador }}</span> contador</p>
+      <p><span class="text-2xl font-bold">{{ visitas }}</span> visitas reales totales</p>
+			<button class="text-white rounded p-1 bg-red-500">
+				<a href="/destroy_session">destruir sesion</a>
+			</button>
+		</div>
+
+		<div class="my-2 flex items-center gap-1 justify-center">
+			<button class="text-white rounded p-1 bg-blue-500">
+				<a href="/2times">+2 visitas</a>
+			</button>
+      <button class="text-white rounded p-1 bg-pink-500">
+				<a href="/reinicio">reiniciar contador</a>
+			</button>
+		</div>
+	</body>
+</html>
