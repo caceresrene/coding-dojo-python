@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Encuesta Dojo</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="max-w-xl mx-auto mt-10">
+		<main class="border-2 border-black p-4 rounded">
+			<h1 class="text-red-500 font-bold text-lg">Encuesta Dojo</h1>
+			<form action="/process" method="post" class="flex flex-col gap-2">
+				<div class="grid grid-cols-2">
+					<label for="name">Your Name:</label>
+					<input
+						class="border-2 border-neutral-600 p-1 rounded-md"
+						type="text"
+						name="name"
+						id="name"
+					/>
+				</div>
+
+				<div class="grid grid-cols-2">
+					<label for="location">Dojo Location</label>
+					<select
+						class="border-2 border-neutral-600 p-1 rounded-md"
+						name="location"
+						id="location"
+					>
+						<option value="San Diego">San Diego</option>
+						<option value="San Jose">San Jose</option>
+						<option value="San Maipu">San Maipu</option>
+					</select>
+				</div>
+
+				<div class="grid grid-cols-2">
+					<label for="favorite">Favorite Language</label>
+					<select
+						class="border-2 border-neutral-600 p-1 rounded-md"
+						name="favorite"
+						id="favorite"
+					>
+						<option value="Python">Python</option>
+						<option value="Java">Java</option>
+						<option value="JavaScript">JavaScript</option>
+					</select>
+				</div>
+
+				<textarea
+					class="border-2 border-neutral-600 rounded-md p-1"
+					placeholder="Leave a comment (optional)"
+					name="comment"
+					id="comment"
+					cols="30"
+					rows="10"
+				></textarea>
+
+				<button
+					type="submit"
+					class="bg-sky-500 border-2 border-sky-600 p-2 text-white rounded hover:border-sky-500 hover:bg-sky-400 transition-all"
+				>
+					submit
+				</button>
+			</form>
+		</main>
+	</body>
+</html>
